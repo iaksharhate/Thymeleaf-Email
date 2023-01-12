@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>FCR</title>
+    <style>
+      @import url("https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700;900&display=swap");
+      * {
+        box-sizing: border-box;
+        margin: 0;
+        padding: 0;
+      }
+      h2 {
+        font-size: 40px;
+      }
+      h3 {
+        font-size: 30px;
+      }
+      .container {
+        max-width: 1260px;
+        width: 100%;
+        margin: 0 auto;
+      }
+      #header .container .heading {
+        background-color: #b3b3b3;
+        display: flex;
+      }
+      #header .container .heading img {
+        height: 50px;
+      }
+      #header .container .col {
+        width: 50%;
+        margin: auto 0;
+      }
+      #header .container .basicInfo {
+        display: flex;
+      }
+      #header .container .basicInfo .col p {
+        margin-top: 10px;
+      }
+      /* Details */
+      #details .container .heading {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        background-color: #b3b3b3;
+        margin-top: 10px;
+      }
+      #details .container .heading h3 {
+        padding: 10px 0;
+        color: #01397a;
+      }
+      #details .container .fcrDetails {
+        border-spacing: 0;
+        width: 100%;
+      }
+      #details .container .fcrDetails tr td,
+      #details .container .fcrDetails tr th {
+        text-align: center;
+        border: 1px solid #dbdbdb;
+        padding: 10px;
+      }
+      #details .container .fcrDetails tr td:first-child,
+      #details .container .fcrDetails tr th:first-child {
+        text-align: left;
+      }
+      #details .container .fcrDetails tr td:last-child,
+      #details .container .fcrDetails tr th:last-child {
+        text-align: right;
+      }
+      #details .container .fcrDetails tr th {
+        background-color: #e7e7e7;
+      }
+    </style>
+  </head>
+  <body>
+    <section id="header">
+      <div class="container">
+        <div class="heading">
+          <div class="col">
+            <img src="images/SpiceMoney.png" alt="" />
+          </div>
+          <div class="col"><h2>FCR</h2></div>
+        </div>
+        <div class="basicInfo">
+          <div class="col">
+            <p><b>Employee Code:</b> <span th:text="${empCode}"></span></p>
+            <p><b>Designation:</b> <span th:text="${designation}"></span></p>
+            <p><b>Manager:</b> <span th:text="${manager}"></span></p>
+            <p><b>Location:</b> <span th:text="${location}"></span></p>
+          </div>
+          <div class="col">
+            <p><b>Employee Name:</b> <span th:text="${empName}"></span></p>
+            <p><b>Department:</b> <span th:text="${dept}"></span></p>
+            <p><b>HOD:</b> <span th:text="${hod}"></span></p>
+          </div>
+        </div>
+      </div>
+    </section>
+    <section id="details">
+      <div class="container">
+        <div class="heading"><h3>FCR Details</h3></div>
+        <table class="fcrDetails">
+          <tr>
+            <th>FCR ID</th>
+            <th>Application Name</th>
+            <th>Source</th>
+            <th>Source IP Address/ Domain URL</th>
+            <th>Destination</th>
+            <th>Destination IP Address/ Domain URL</th>
+            <th>Port Number</th>
+            <th>Expire Date</th>
+            <th>Action</th>
+          </tr>
+          <tr th:each="detail : ${fcrDetails}">
+            <td th:text="${detail}"></td>
+            <td th:text="${detail}"></td>
+            <td th:text="${detail}"></td>
+            <td th:text="${detail}"></td>
+            <td th:text="${detail}"></td>
+            <td th:text="${detail}"></td>
+            <td th:text="${detail}"></td>
+            <td th:text="${detail}"></td>
+            <td><a href="https://stg-kmp.spicemoney.com/"> Click here to Extend</a></td>
+          </tr>
+        </table>
+      </div>
+    </section>
+  </body>
+</html>
